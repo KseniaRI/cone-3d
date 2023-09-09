@@ -1,4 +1,4 @@
-import { Space } from "antd"
+import { Space } from "antd";
 
 const ConeCaption = ({ coneParameters }) => {
     const { height, radius, segments } = coneParameters;

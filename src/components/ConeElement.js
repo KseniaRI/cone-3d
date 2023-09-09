@@ -35,6 +35,8 @@ const ConeElement = ({coneParameters, setRequestStatus, requestStatus}) => {
   
   return (
     <div id="canvas-container">
+      {requestStatus === 'loading' && <Spin />}
+      {requestStatus === 'error' && <p className='message'>Something went wrong...</p>}
       {requestStatus === 'success' &&
         <>
           <ConeCaption coneParameters={coneParameters}/>
@@ -43,8 +45,6 @@ const ConeElement = ({coneParameters, setRequestStatus, requestStatus}) => {
           </Canvas>
         </>
       }
-      {requestStatus === 'loading' && <Spin />}
-      {requestStatus === 'error' && <p className='message'>Something went wrong...</p>}
     </div>   
   );
 }
