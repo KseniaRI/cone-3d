@@ -12,7 +12,7 @@ const UserForm = ({setConeParameters, setRequestStatus}) => {
     const onFinishFailed = (errorInfo) => {
         console.log('Failed:', errorInfo);
     };
-    
+
     return (
         <Form
             form={form}

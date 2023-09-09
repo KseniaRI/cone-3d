@@ -4,6 +4,7 @@ import { Color } from 'three';
 import Triangle from './Triangle';
 import { Spin } from 'antd';
 import { fetchTrianglesData } from '../services/fetchTrianglesData';
+import ConeCaption from './ConeCaption';
 
 const ConeElement = ({coneParameters, setRequestStatus, requestStatus}) => {
 
@@ -34,7 +35,14 @@ const ConeElement = ({coneParameters, setRequestStatus, requestStatus}) => {
   
   return (
     <div id="canvas-container">
-      {requestStatus === 'success' && <Canvas>{coneTriangulatedRepresentation}</Canvas>}
+      {requestStatus === 'success' &&
+        <>
+          <ConeCaption coneParameters={coneParameters}/>
+          <Canvas>
+            {coneTriangulatedRepresentation}
+          </Canvas>
+        </>
+      }
       {requestStatus === 'loading' && <Spin />}
       {requestStatus === 'error' && <p className='message'>Something went wrong...</p>}
     </div>   
