@@ -32,7 +32,7 @@ const ConeElement = ({coneParameters, setRequestStatus, requestStatus}) => {
     const color = new Color().setHSL(index / triangles.length, 1, 0.5);
     return <Triangle color={color} vertices={vertices} key={index} />
   });
-  
+
   return (
     <div id="canvas-container">
       {requestStatus === 'loading' && <Spin />}
